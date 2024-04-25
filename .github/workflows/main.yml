@@ -35,8 +35,10 @@ jobs:
       #- name: Run qita
         #run: python ${{ github.workspace }}/qita.py
         
-      - name: 提交更改
+      - name: Save changes to a file
         run: |
+          git config --local user.email "95021138@qq.com"
+          git config --local user.name "cymz6"
           echo "Changes made on $(date)" > ${{ github.workspace }}/$(date +%Y-%m-%d).txt
           git add $(date +%Y-%m-%d).txt
           git commit -m "Add changes made on $(date)"
