@@ -3,7 +3,7 @@ name: sciptv
 on:
   schedule:
     - cron: '0 21 1 * *'
-  push:
+  workflow_dispatch:
     branches:
       - main
 
@@ -37,9 +37,12 @@ jobs:
         
       - name: Save changes to a file
         run: |
-          git config --local user.email "95021138@qq.com"
-          git config --local user.name "cymz6"
-          echo "Changes made on $(date)" > ${{ github.workspace }}/$(date +%Y-%m-%d).txt
-          git add $(date +%Y-%m-%d).txt
-          git commit -m "Add changes made on $(date)"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          if [[ -f "lives.txt" ]]; then
+          git add lives.txt
+          fi
+          if ! git diff --staged --quiet; then
+          git commit -m "Auto-update live"
           git push
+          fi
