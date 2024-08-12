@@ -7,8 +7,8 @@ import requests
 import re
 ###urls城市根据自己所处地理位置修改
 urls = [
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iQ2hlbmdkdSI%3D",  # Chengdu 成都
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iWml5YW5nIg%3D%3D",  # Ziyang 资阳
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iTmFuTmluZyI%3D",  # Nanning 南宁
+    
 ]
 
 def modify_urls(url):
